@@ -11,6 +11,7 @@ class Dictionary {
 public:
     Dictionary(string filename);
     string findTranslation(string word);
+    string displayPortugueseWithAccents(string portuguese_word);
 
 private:
     ifstream file;

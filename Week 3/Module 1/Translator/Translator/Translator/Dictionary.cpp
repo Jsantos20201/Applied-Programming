@@ -61,6 +61,37 @@ string Dictionary::findTranslation(string word) {
     return result;
 }
 
+string Dictionary::displayPortugueseWithAccents(string portuguese_word) {
+    string result = "";
+    for (char c : portuguese_word) {
+        switch (c) {
+        case 'a':
+            result += "á";
+            break;
+        case 'e':
+            result += "é";
+            break;
+        case 'i':
+            result += "í";
+            break;
+        case 'o':
+            result += "ó";
+            break;
+        case 'u':
+            result += "ú";
+            break;
+        case 'c':
+            result += "ç";
+            break;
+        default:
+            result += c;
+            break;
+        }
+    }
+    return result;
+}
+
+
 string Dictionary::toLowercase(string str) {
     string result = "";
     for (char c : str) {
