@@ -1,0 +1,7 @@
+version: "compnerd.org Swift version 5.8 (swift-5.8-RELEASE)"
+options: "0b0223ad45c017db1975fbc24ca06c18b49ef5440f58fbe94faac8e3c8f9cd47"
+build_start_time: [13327287031, 0]
+build_end_time: [13327287034, 0]
+inputs:
+  "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\main.swift": [13327281584, 0]
+  "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\tasks.swift": [13327287011, 0]

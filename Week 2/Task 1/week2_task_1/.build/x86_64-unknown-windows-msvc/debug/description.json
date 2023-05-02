@@ -1,0 +1,149 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.week2_task_1-debug.module" : {
+      "executable" : "C:\\Library\\Developer\\Toolchains\\unknown-Asserts-development.xctoolchain\\usr\\bin\\swiftc.exe",
+      "importPath" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\tasks.swift"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "week2_task_1",
+      "moduleOutputPath" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.swiftmodule",
+      "objects" : [
+        "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.build\\main.swift.o",
+        "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.build\\tasks.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-unknown-windows-msvc",
+        "-swift-version",
+        "5",
+        "-enable-batch-mode",
+        "-index-store-path",
+        "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\index\\store",
+        "-Onone",
+        "-enable-testing",
+        "-g",
+        "-j16",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\ModuleCache",
+        "-parseable-output",
+        "-color-diagnostics",
+        "-sdk",
+        "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\SDKs\\Windows.sdk",
+        "-libc",
+        "MD",
+        "-I",
+        "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\Library\\XCTest-development\\usr\\lib\\swift\\windows",
+        "-I",
+        "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\Library\\XCTest-development\\usr\\lib\\swift\\windows\\x86_64",
+        "-L",
+        "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\Library\\XCTest-development\\usr\\lib\\swift\\windows\\x86_64",
+        "-use-ld=lld"
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.build\\main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.build\\tasks.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.swiftmodule"
+        }
+      ],
+      "sources" : [
+        "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\main.swift",
+        "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\tasks.swift"
+      ],
+      "tempsPath" : "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\week2_task_1.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "week2_task_1" : [
+      "C:\\Library\\Developer\\Toolchains\\unknown-Asserts-development.xctoolchain\\usr\\bin\\swiftc.exe",
+      "-module-name",
+      "week2_task_1",
+      "-incremental",
+      "-c",
+      "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\main.swift",
+      "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\Sources\\tasks.swift",
+      "-I",
+      "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug",
+      "-target",
+      "x86_64-unknown-windows-msvc",
+      "-swift-version",
+      "5",
+      "-enable-batch-mode",
+      "-index-store-path",
+      "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\index\\store",
+      "-Onone",
+      "-enable-testing",
+      "-g",
+      "-j16",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Week 2\\Task 1\\week2_task_1\\.build\\x86_64-unknown-windows-msvc\\debug\\ModuleCache",
+      "-parseable-output",
+      "-color-diagnostics",
+      "-sdk",
+      "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\SDKs\\Windows.sdk",
+      "-libc",
+      "MD",
+      "-I",
+      "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\Library\\XCTest-development\\usr\\lib\\swift\\windows",
+      "-I",
+      "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\Library\\XCTest-development\\usr\\lib\\swift\\windows\\x86_64",
+      "-L",
+      "C:\\Library\\Developer\\Platforms\\Windows.platform\\Developer\\Library\\XCTest-development\\usr\\lib\\swift\\windows\\x86_64",
+      "-use-ld=lld",
+      "-driver-use-frontend-path",
+      "C:\\Library\\Developer\\Toolchains\\unknown-Asserts-development.xctoolchain\\usr\\bin\\swiftc.exe"
+    ]
+  },
+  "targetDependencyMap" : {
+    "week2_task_1" : [
+
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  }
+}
