@@ -1,0 +1,12 @@
+hello: olá
+goodbye: adeus
+please: por favor
+thank you: obrigado
+yes: sim
+no: não
+friend: amigo
+family: família
+house: casa
+car: carro
+food: comida
+water: água

@@ -5,8 +5,10 @@
 using namespace std;
 
 int main() {
-    Dictionary dictionary("dictionary.txt");
+    Dictionary dictionary("dictionaryTest.txt");
     string word;
+
+    cout << "Welcome to the English to Portuguese Dictionary\n";
 
     while (true) {
         cout << "Type an English word (q to quit): ";
