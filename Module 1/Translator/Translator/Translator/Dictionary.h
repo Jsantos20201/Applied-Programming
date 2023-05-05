@@ -1,23 +1,22 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
-#include <fstream>
 #include <string>
-#include <locale>
 
 using namespace std;
 
 class Dictionary {
 public:
-    Dictionary(string filename);
-    string findTranslation(string word);
+    Dictionary(const string& dictionaryFile);
+
+    string translate(const string& englishWord);
 
 private:
-    ifstream file;
-    string filename;
-    locale locale;
-    string toLowercase(string str);
-    bool hasSpaces(string word);
+    string dictionaryFile;
+
+    bool hasSpace(const string& str);
+    bool hasNumber(const string& str);
+    bool hasPunctuation(const string& str);
 };
 
-#endif 
+#endif  // DICTIONARY_H

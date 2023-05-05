@@ -1,12 +1,12 @@
-hello: ol·
+hello: ol√°
 goodbye: adeus
 please: por favor
 thank you: obrigado
 yes: sim
-no: n„o
+no: n√£o
 friend: amigo
-family: famÌlia
+family: fam√≠lia
 house: casa
 car: carro
 food: comida
-water: ·gua
+water: √°gua

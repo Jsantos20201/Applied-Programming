@@ -1,80 +1,78 @@
 #include "Dictionary.h"
+#include <fstream>
+#include <locale>
+#include <algorithm>
 
-Dictionary::Dictionary(string filename) : filename(filename), file(filename), locale("pt_BR.utf8") {}
+using namespace std;
 
-string Dictionary::findTranslation(string word) {
-    string line, portuguese_word, result = "";
-    bool found = false;
-
-    // Check if the word has any spaces
-    if (hasSpaces(word)) {
-        result = "Please type the word correctly in the dictionary.";
-        return result;
-    }
-
-    // Convert the word to lowercase
-    word = toLowercase(word);
-
-    // Check if the word is a number or contains punctuation
-    bool invalid_word = false;
-    for (char c : word) {
-        if (isdigit(c)) {
-            result = "Please type in letters not numbers.";
-            invalid_word = true;
-            break;
-        }
-        else if (!isalpha(c, locale)) {
-            result = "Don't type in punctuation. Only letters.";
-            invalid_word = true;
-            break;
-        }
-    }
-
-    if (invalid_word) {
-        return result;
-    }
-
-
-    // Search for the word in the dictionary
-    found = false;
-    while (getline(file, line)) {
-        string lowercase_line = toLowercase(line);
-        if (lowercase_line.substr(0, word.length()) == word) {
-            portuguese_word = line.substr(word.length() + 1);
-            result = "The Portuguese word is: " + portuguese_word;
-            found = true;
-            break;
-        }
-        else if (lowercase_line.find(word) != string::npos) {
-            result = "Please type in an English word in the dictionary. Not a Portuguese word.";
-            found = true;
-            break;
-        }
-    }
-
-    file.clear();
-    file.seekg(0, ios::beg);
-
-    if (!found) {
-        result = "This word is not in the Portuguese dictionary.";
-    }
-
-    return result;
+Dictionary::Dictionary(const string& dictionaryFile) : dictionaryFile(dictionaryFile) {
+    // Set the locale to Portuguese
+    locale::global(locale("pt_BR.UTF-8"));
 }
 
-string Dictionary::toLowercase(string str) {
-    string result = "";
-    for (char c : str) {
-        result += tolower(c);
-    }
-    return result;
+bool Dictionary::hasSpace(const string& str) {
+    // Check if the string contains a space character
+    return (str.find(' ') != string::npos);
 }
 
-bool Dictionary::hasSpaces(string word) {
-    for (char c : word) {
-        if (isspace(c)) {
-            return true;
+bool Dictionary::hasNumber(const string& str) {
+    // Check if the string contains a numeric character
+    return (std::any_of(str.begin(), str.end(), ::isdigit));
+}
+
+bool Dictionary::hasPunctuation(const string& str) {
+    // Check if the string contains any punctuation character
+    return (std::any_of(str.begin(), str.end(), ::ispunct));
+}
+
+string Dictionary::translate(const string& englishWord) {
+    // Open the dictionary file
+    ifstream infile(dictionaryFile);
+
+    // Check if the file was opened successfully
+    if (!infile) {
+        return "Error opening file";
+    }
+
+    // Check if the input contains a space
+    if (hasSpace(englishWord)) {
+        return "Please type in a word correctly into the dictionary.";
+    }
+
+    // Check if the input contains a number
+    if (hasNumber(englishWord)) {
+        return "Please don't type in numbers into the dictionary.";
+    }
+
+    // Check if the input contains punctuation
+    if (hasPunctuation(englishWord)) {
+        return "Please don't type in punctuation in the dictionary.";
+    }
+
+    // Convert the input to lowercase
+    string lowercaseWord = englishWord;
+    transform(lowercaseWord.begin(), lowercaseWord.end(), lowercaseWord.begin(), ::tolower);
+
+    // Search for the corresponding Portuguese word in the dictionary file
+    string line;
+    while (getline(infile, line)) {
+        // Split the line into English and Portuguese words
+        size_t pos = line.find(':');
+        if (pos != string::npos) {
+            string e = line.substr(0, pos);
+            string p = line.substr(pos + 1);
+
+            // Convert the English word from the file to lowercase
+            transform(e.begin(), e.end(), e.begin(), ::tolower);
+
+            // Check if the English word matches the user input
+            if (e == lowercaseWord) {
+                // Return the Portuguese word with accents
+                return p;
+            }
         }
     }
-    return false;
+
+    // If the word is not found in the dictionary
+    return "Word not found in dictionary";
 }

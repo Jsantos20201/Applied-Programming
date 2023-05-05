@@ -5,21 +5,24 @@
 using namespace std;
 
 int main() {
-    Dictionary dictionary("dictionaryTest.txt");
-    string word;
+    Dictionary dictionary("dictionary.txt");
 
-    cout << "Welcome to the English to Portuguese Dictionary\n";
+    cout << "Welcome to the English - Portuguese dictionary!" << endl;
 
+    // Loop to allow the user to search for multiple words 
+    string english_word;
     while (true) {
-        cout << "Type an English word (q to quit): ";
-        getline(cin, word);
+        cout << "Enter an English word (q to quit): ";
+        cin >> english_word;
 
-        if (word == "q") {
+        // Check if the user wants to quit
+        if (english_word == "q") {
             break;
         }
 
-        string result = dictionary.findTranslation(word);
-        cout << result << endl;
+        // Translate the word
+        string translation = dictionary.translate(english_word);
+        cout << "Translation: " << translation << endl;
     }
 
     return 0;
