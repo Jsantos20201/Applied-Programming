@@ -13,7 +13,7 @@ int main() {
     string english_word;
     while (true) {
         cout << "Enter an English word (q to quit): ";
-        cin >> english_word;
+        getline(cin, english_word);
 
         // Check if the user wants to quit
         if (english_word == "q") {

@@ -7,6 +7,7 @@ The software is an English to Portuguese dictionary. In this program, the user c
 The purpose of this software is to educate myself in the fundamentals of the programming languague called C++ by creating this English to Portuguese Dictionary program.
 
 ## Video of Software
+[Module 1: Demo video](https://www.youtube.com/watch?v=SKecyT89MEQ)
 
 # Development Enviroment
 This software is created by C++. I used modules in the program such as "fstream", "locale", and "algorithm" to make the program operate efficently as possible.
