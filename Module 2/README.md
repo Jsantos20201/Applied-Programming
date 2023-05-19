@@ -23,7 +23,7 @@ It allows users to track their spending by recording details such as the amount 
 and the date it occurred. The program offers several features to assist users in organizing and analyzing their expenses
 
 ## Video of Software
-[Module 2: Demo video](https://www.youtube.com/watch?v=SKecyT89MEQ)
+[Module 2: Demo video](https://www.youtube.com/watch?v=zn_Qj6nqEGU)
 
 # Development Enviroment
 This program is created by Kotlin. 
