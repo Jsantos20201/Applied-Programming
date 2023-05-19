@@ -26,11 +26,10 @@ and the date it occurred. The program offers several features to assist users in
 [Module 2: Demo video](https://www.youtube.com/watch?v=SKecyT89MEQ)
 
 # Development Enviroment
-
+This program is created by Kotlin. 
 
 # Useful Websites
-* [C++ Basics: CPLusPlus](https://cplusplus.com/doc/tutorial/)
-* [C++ Basics: W3schools](https://www.w3schools.com/cpp/)
-* [C++ fstream](https://www.w3schools.com/cpp/cpp_files.asp)
-* [C++ Locale](https://cplusplus.com/reference/locale/)
-* [C++ Algorithms](https://en.cppreference.com/w/cpp/algorithm)
+* [Kotlin Website](https://kotlinlang.org/)
+* [Kotlin Basics: W3schools.com](https://www.w3schools.com/KOTLIN/index.php)
+* [How to Download Kotlin in Visual Studio Code](https://www.youtube.com/watch?v=QeVl8fXteI0)
+* [Kotlin: GeeksforGeeks.org](https://www.geeksforgeeks.org/kotlin-programming-language/)
