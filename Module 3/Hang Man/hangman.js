@@ -101,6 +101,11 @@ class Hangman {
     }
   
     processGuess(letter) {
+        if (!/^[a-zA-Z]$/.test(letter)) {
+          console.log("Invalid input. Please enter a letter.");
+          return;
+        }
+      
         if (this.guessedLetters.includes(letter)) {
           console.log("You already guessed that letter. Try again!");
         } else {
@@ -114,7 +119,7 @@ class Hangman {
             console.log("Oops! Wrong guess.");
             this.incorrectGuesses++;
             console.log("Remaining guesses: " + (this.maxGuesses - this.incorrectGuesses));
-            if (this.incorrectGuesses >= this.maxGuesses) { // Corrected condition
+            if (this.incorrectGuesses >= this.maxGuesses) {
               console.log("You lost the game. The word was: " + this.selectedWord);
             } else {
               console.log(this.manStages[this.incorrectGuesses]);
@@ -122,6 +127,7 @@ class Hangman {
           }
         }
       }
+      
       
       
   
