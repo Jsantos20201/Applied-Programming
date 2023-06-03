@@ -70,7 +70,7 @@ class Hangman {
       this.selectedWord = '';
       this.guessedLetters = [];
       this.maxGuesses = this.manStages.length - 1;
-      this.incorrectGuesses = -1;
+      this.incorrectGuesses = 0;
     }
   
     getRandomWord() {
@@ -92,36 +92,37 @@ class Hangman {
     }
   
     isGameWon() {
-      for (let char of this.selectedWord) {
-        if (!this.guessedLetters.includes(char)) {
-          return false;
+        for (let char of this.selectedWord) {
+            if (!this.guessedLetters.includes(char)) {
+            return false;
+            }
         }
-      }
-      return true;
+        return true;
     }
   
     processGuess(letter) {
-      if (this.guessedLetters.includes(letter)) {
-        console.log("You already guessed that letter. Try again!");
-      } else {
-        this.guessedLetters.push(letter);
-        if (this.selectedWord.includes(letter)) {
-          console.log("Good guess!");
-          if (this.isGameWon()) {
-            console.log("Congratulations! You won the game!");
-          }
+        if (this.guessedLetters.includes(letter)) {
+          console.log("You already guessed that letter. Try again!");
         } else {
-          console.log("Oops! Wrong guess.");
-          this.incorrectGuesses++;
-          console.log("Remaining guesses: " + (this.maxGuesses - this.incorrectGuesses - 1));
-          if (this.incorrectGuesses >= this.maxGuesses - 1) {
-            console.log("You lost the game. The word was: " + this.selectedWord);
+          this.guessedLetters.push(letter);
+          if (this.selectedWord.includes(letter)) {
+            console.log("Good guess!");
+            if (this.isGameWon()) {
+              console.log("Congratulations! You won the game!");
+            }
           } else {
-            console.log(this.manStages[this.incorrectGuesses + 1]);
+            console.log("Oops! Wrong guess.");
+            this.incorrectGuesses++;
+            console.log("Remaining guesses: " + (this.maxGuesses - this.incorrectGuesses));
+            if (this.incorrectGuesses > this.maxGuesses) { // Adjusted condition
+              console.log("You lost the game. The word was: " + this.selectedWord);
+            } else {
+              console.log(this.manStages[this.incorrectGuesses]);
+            }
           }
         }
       }
-    }
+      
   
     startGame() {
       console.log("Welcome to Hangman!");
