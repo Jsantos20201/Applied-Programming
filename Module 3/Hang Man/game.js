@@ -1,3 +1,5 @@
+// Main file
+
 // Import the Hangman class
 import Hangman from './hangman.js';
 
