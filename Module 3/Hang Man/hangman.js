@@ -147,33 +147,34 @@ class Hangman {
      * @param {string} letter - The letter guessed by the user.
      */
     processGuess(letter) {
-        if (!/^[a-zA-Z]$/.test(letter)) {
-          console.log("Invalid input. Please enter a letter.");
-          return;
-        }
-      
-        if (this.guessedLetters.includes(letter)) {
-          console.log("You already guessed that letter. Try again!");
+      if (!/^[a-zA-Z]$/.test(letter)) {
+        console.log("Invalid input. Please enter a letter.");
+        return;
+      }
+    
+      if (this.guessedLetters.includes(letter)) {
+        console.log("You already guessed that letter. Try again!");
+      } else {
+        this.guessedLetters.push(letter);
+        if (this.selectedWord.includes(letter)) {
+          console.log("Good guess!");
+          if (this.isGameWon()) {
+            console.log("Congratulations! You won the game!");
+          }
         } else {
-          this.guessedLetters.push(letter);
-          if (this.selectedWord.includes(letter)) {
-            console.log("Good guess!");
-            if (this.isGameWon()) {
-              console.log("Congratulations! You won the game!");
-            }
-          } else {
-            console.log("Oops! Wrong guess.");
-            this.incorrectGuesses++;
-            console.log("Remaining guesses: " + (this.maxGuesses - this.incorrectGuesses));
-            if (this.incorrectGuesses >= this.maxGuesses) {
-              console.log("You lost the game. The word was: " + this.selectedWord);
-            } else {
-              console.log(this.manStages[this.incorrectGuesses]);
-            }
+          console.log("Oops! Wrong guess.");
+          this.incorrectGuesses++;
+          console.log("Remaining guesses: " + (this.maxGuesses - this.incorrectGuesses));
+          console.log(this.manStages[this.incorrectGuesses]);
+    
+          if (this.incorrectGuesses >= this.maxGuesses) {
+            console.log("You lost the game. The word was: " + this.selectedWord);
+            return;
           }
         }
       }
-
+    }
+  
     /**
      * startGame()
      *

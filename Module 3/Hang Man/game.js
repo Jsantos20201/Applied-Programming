@@ -4,7 +4,7 @@
 import Hangman from './hangman.js';
 
 // List of words for the game
-const words = ['hangman', 'javascript', 'programming', 'openai', 'computer'];
+const words = ['hangman', 'javascript', 'programming', 'hello', 'computer', 'software'];
 
 // Create an instance of the Hangman class and start the game
 const hangman = new Hangman(words);
