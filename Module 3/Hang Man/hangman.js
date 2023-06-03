@@ -114,7 +114,7 @@ class Hangman {
             console.log("Oops! Wrong guess.");
             this.incorrectGuesses++;
             console.log("Remaining guesses: " + (this.maxGuesses - this.incorrectGuesses));
-            if (this.incorrectGuesses > this.maxGuesses) { // Adjusted condition
+            if (this.incorrectGuesses >= this.maxGuesses) { // Corrected condition
               console.log("You lost the game. The word was: " + this.selectedWord);
             } else {
               console.log(this.manStages[this.incorrectGuesses]);
@@ -122,6 +122,7 @@ class Hangman {
           }
         }
       }
+      
       
   
     startGame() {
