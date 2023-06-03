@@ -23,13 +23,12 @@ experience where players can test their knowledge and have fun trying to
 uncover hidden words.
 
 ## Video of Software
-[Module 2: Demo video](https://www.youtube.com/watch?v=zn_Qj6nqEGU)
+[Module 3: Demo video](https://www.youtube.com/watch?v=ebxxbo-FZQM)
 
 # Development Enviroment
-This program is created by Kotlin. 
+This program is created by JavaScript. 
 
 # Useful Websites
-* [Kotlin Website](https://kotlinlang.org/)
-* [Kotlin Basics: W3schools.com](https://www.w3schools.com/KOTLIN/index.php)
-* [How to Download Kotlin in Visual Studio Code](https://www.youtube.com/watch?v=QeVl8fXteI0)
-* [Kotlin: GeeksforGeeks.org](https://www.geeksforgeeks.org/kotlin-programming-language/)
+* [JavaScript in VS Code](https://code.visualstudio.com/docs/languages/javascript)
+* [Javascript Basics: W3schools.com](https://www.w3schools.com/js/)
+* [JavaScript Tutorial Videos by Bro Code](https://www.youtube.com/playlist?list=PLZPZq0r_RZOMRMjHB_IEBjOW_ufr00yG1)
