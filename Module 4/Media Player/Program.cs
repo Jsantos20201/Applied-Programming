@@ -1,5 +1,28 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+/* 
+The Media Player program is a console-based application that allows users to play and control media files such as MP3, MP4, and WAV files. 
+It uses the NAudio library for audio playback.
+
+Here's a summary of the program's functionality:
+
+1. The program starts by prompting the user to enter the path of the directory containing the media files. If a default directory exists, it is used.
+2. The program scans the directory for supported media files (MP3, MP4, and WAV) and displays a list of files to the user.
+3. The user can select a file to play from the list. Once a file is selected, the program initiates a new thread to play the media file using NAudio.
+4. While the media file is playing, the program displays a media player menu with various options:
+    -Play/Pause: Toggles between playing and pausing the current media file.
+    -Stop: Stops the playback and resets the media player state.
+    -Skip to next: Skips to the next media file in the playlist (if available).
+    -Skip to previous: Skips to the previous media file in the playlist (if available).
+    -Increase volume: Increases the volume of the media player.
+    -Decrease volume: Decreases the volume of the media player.
+    -Exit: Exits the program.
+5. The program continuously displays the media player menu and handles user input until the user chooses to exit.
+
+Overall, the Media Player program provides a basic media playback functionality with the ability to control playback, adjust volume, 
+and navigate through a playlist of media files.
+*/
+
 using NAudio.Wave;
 using System;
 using System.IO;
@@ -27,6 +50,8 @@ namespace MediaPlayer
 
         static void Main(string[] args)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine("Welcome to the Media Player!");
 
             string[] supportedFormats = { ".mp3", ".mp4", ".wav" };
@@ -53,10 +78,14 @@ namespace MediaPlayer
             }
         }
 
+        /* Gets the directory path where the media files are located.
+         * If the default directory is not found, it prompts the user to enter a valid directory path.
+         * Returns the directory path as a string.
+         */
         static string GetDirectoryPath()
         {
             // Provide a default directory path
-            string directoryPath = "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Module 4\\Media Player";
+            string directoryPath = "C:\\Users\\Josep\\Desktop\\Applied-Programming\\Module 4\\Media Player"; // You can change file path here.
 
             // Check if the default directory exists
             if (Directory.Exists(directoryPath))
@@ -76,14 +105,21 @@ namespace MediaPlayer
             return directoryPath;
         }
 
+        /* Retrieves the media files in the specified directory that have supported formats.
+         * Returns an array of file paths.
+         */
         static string[] GetFilesInDirectory(string directoryPath, string[] supportedFormats)
         {
             string[] files = Directory.GetFiles(directoryPath);
             return Array.FindAll(files, file => supportedFormats.Contains(Path.GetExtension(file)));
         }
 
+        /* Displays the list of media files and prompts the user to select a file to play.
+         * Returns the index of the selected file.
+         */
         static int DisplayMediaFiles(string[] files)
         {
+            Console.WriteLine();
             Console.WriteLine("Select a media file to play:");
 
             for (int i = 0; i < files.Length; i++)
@@ -103,6 +139,9 @@ namespace MediaPlayer
             return -1;
         }
 
+        /* Plays the selected media file.
+         * Initializes a new thread to play the media file and runs the media player menu on the main thread.
+         */
         static void PlayMediaFile(string filePath)
         {
             Console.WriteLine($"Playing {Path.GetFileName(filePath)}...");
@@ -123,6 +162,9 @@ namespace MediaPlayer
             Console.WriteLine("Media playback finished.");
         }
 
+        /* Plays the specified media file.
+         * Uses NAudio to read and play the audio file.
+         */
         static void PlayMedia(string filePath)
         {
             isPlaying = true;
@@ -149,8 +191,10 @@ namespace MediaPlayer
             isPlaying = false;
         }
 
+        /* Displays the media player menu options. */
         static void DisplayMediaPlayerMenu()
         {
+            Console.WriteLine();
             Console.WriteLine("Media Player Menu:");
             Console.WriteLine("1. Play/Pause");
             Console.WriteLine("2. Stop");
@@ -161,6 +205,7 @@ namespace MediaPlayer
             Console.WriteLine("7. Exit");
         }
 
+        /* Handles the user's choice from the media player menu. */
         static void HandleMediaPlayerMenu()
         {
             Console.Write("Enter your choice: ");
@@ -196,6 +241,7 @@ namespace MediaPlayer
             }
         }
 
+        /* Toggles the playback state between play and pause. */
         static void TogglePlayback()
         {
             if (isPlaying)
@@ -212,6 +258,7 @@ namespace MediaPlayer
             isPlaying = !isPlaying;
         }
 
+        /* Stops the playback and resets the media player state. */
         static void StopPlayback()
         {
             outputDevice.Stop();
@@ -219,6 +266,7 @@ namespace MediaPlayer
             Console.WriteLine("Stopping playback...");
         }
 
+        /* Increases the volume of the media player. */
         static void IncreaseVolume()
         {
             if (volumeLevel < 1.0f)
@@ -233,6 +281,7 @@ namespace MediaPlayer
             }
         }
 
+        /* Decreases the volume of the media player. */
         static void DecreaseVolume()
         {
             if (volumeLevel > 0.0f)
@@ -247,6 +296,7 @@ namespace MediaPlayer
             }
         }
 
+        /* Skips to the next media file in the playlist. */
         static void SkipToNext()
         {
             if (currentFileIndex < files.Length - 1)
@@ -254,6 +304,7 @@ namespace MediaPlayer
                 StopPlayback();
                 currentFileIndex++;
                 string nextFile = files[currentFileIndex];
+                Console.WriteLine($"Skipping to next song: {Path.GetFileName(nextFile)}...");
                 PlayMediaFile(nextFile);
             }
             else
@@ -262,6 +313,7 @@ namespace MediaPlayer
             }
         }
 
+        /* Skips to the previous media file in the playlist. */
         static void SkipToPrevious()
         {
             if (currentFileIndex > 0)
@@ -269,6 +321,7 @@ namespace MediaPlayer
                 StopPlayback();
                 currentFileIndex--;
                 string previousFile = files[currentFileIndex];
+                Console.WriteLine($"Skipping to previous song: {Path.GetFileName(previousFile)}...");
                 PlayMediaFile(previousFile);
             }
             else
@@ -277,6 +330,7 @@ namespace MediaPlayer
             }
         }
 
+        /* Runs the media player by continuously displaying the menu and handling user input. */
         static void RunMediaPlayer()
         {
             while (true)
