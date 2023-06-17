@@ -1,0 +1,22 @@
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\Media Player.exe
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\Media Player.deps.json
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\Media Player.runtimeconfig.json
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\Media Player.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\Media Player.pdb
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.csproj.AssemblyReference.cache
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.AssemblyInfoInputs.cache
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.AssemblyInfo.cs
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.csproj.CoreCompileInputs.cache
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\refint\Media Player.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.pdb
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.genruntimeconfig.cache
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\ref\Media Player.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\NAudio.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\NAudio.Asio.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\NAudio.Core.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\NAudio.Midi.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\NAudio.Wasapi.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\bin\Debug\net7.0\NAudio.WinMM.dll
+C:\Users\Josep\Desktop\Applied-Programming\Module 4\Media Player\obj\Debug\net7.0\Media Player.csproj.CopyComplete
