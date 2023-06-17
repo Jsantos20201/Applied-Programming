@@ -28,7 +28,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading;
-
+ 
 namespace MediaPlayer
 {
     class Program
@@ -273,6 +273,10 @@ namespace MediaPlayer
             if (volumeLevel < 1.0f)
             {
                 volumeLevel += 0.1f;
+                if (volumeLevel > 1.0f)
+                {
+                    volumeLevel = 1.0f;
+                }
                 outputDevice.Volume = volumeLevel;
                 Console.WriteLine("Increasing volume...");
             }
@@ -287,7 +291,11 @@ namespace MediaPlayer
         {
             if (volumeLevel > 0.0f)
             {
-                volumeLevel -= 0.1f;
+                volumeLevel -= 0.2f;
+                if (volumeLevel < 0.0f)
+                {
+                    volumeLevel = 0.0f;
+                }
                 outputDevice.Volume = volumeLevel;
                 Console.WriteLine("Decreasing volume...");
             }
