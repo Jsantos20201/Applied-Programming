@@ -144,6 +144,7 @@ namespace MediaPlayer
          */
         static void PlayMediaFile(string filePath)
         {
+            Console.WriteLine();
             Console.WriteLine($"Playing {Path.GetFileName(filePath)}...");
 
             // Set the current file index
