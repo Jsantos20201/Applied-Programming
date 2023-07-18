@@ -8,6 +8,10 @@ public class TicTacToeGUI extends JFrame {
     private char opponentPlayer;
     private JButton[][] buttons;
 
+    /**
+     * Constructor for the TicTacToeGUI class.
+     * Initializes the game board and sets up the graphical user interface (GUI).
+     */
     public TicTacToeGUI() {
         board = new char[3][3];
         currentPlayer = 'X';
@@ -16,6 +20,9 @@ public class TicTacToeGUI extends JFrame {
         initializeUI();
     }
 
+    /**
+     * Initializes the game board with empty cells represented by '-'.
+     */
     public void initializeBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -24,12 +31,17 @@ public class TicTacToeGUI extends JFrame {
         }
     }
 
+    /**
+     * Initializes the graphical user interface (GUI) for the Tic Tac Toe game.
+     * Creates buttons for the Tic Tac Toe grid and adds action listeners to handle user clicks.
+     */
     public void initializeUI() {
         setTitle("Tic Tac Toe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(3, 3));
         buttons = new JButton[3][3];
 
+        // Create buttons and set up their properties
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 JButton button = new JButton();
@@ -50,6 +62,10 @@ public class TicTacToeGUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Handles the event when a cell (button) on the game grid is clicked.
+     * Determines the row and column of the clicked cell and updates the game state accordingly.
+     */
     public void onCellClicked(JButton button) {
         int row = -1, col = -1;
 
@@ -64,6 +80,7 @@ public class TicTacToeGUI extends JFrame {
             }
         }
 
+        // Execute the game logic when a player makes a move on the grid
         if (makeMove(row, col, currentPlayer)) {
             button.setText(String.valueOf(currentPlayer));
             if (checkWin(currentPlayer)) {
@@ -83,6 +100,10 @@ public class TicTacToeGUI extends JFrame {
         }
     }
 
+    /**
+     * Attempts to make a move for the given player at the specified row and column.
+     * Returns true if the move is valid and successful; otherwise, returns false.
+     */
     public boolean makeMove(int row, int col, char player) {
         if (row >= 0 && row < 3 && col >= 0 && col < 3 && board[row][col] == '-') {
             board[row][col] = player;
@@ -91,6 +112,10 @@ public class TicTacToeGUI extends JFrame {
         return false;
     }
 
+    /**
+     * Checks if the given player has won the game.
+     * Returns true if the player has won; otherwise, returns false.
+     */
     public boolean checkWin(char player) {
         // Check rows
         for (int i = 0; i < 3; i++) {
@@ -117,6 +142,10 @@ public class TicTacToeGUI extends JFrame {
         return false;
     }
 
+    /**
+     * Checks if the game board is full, i.e., no empty cells remain.
+     * Returns true if the board is full; otherwise, returns false.
+     */
     public boolean isBoardFull() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -128,9 +157,12 @@ public class TicTacToeGUI extends JFrame {
         return true;
     }
 
+    /**
+     * Implements a simple AI strategy for the computer's move.
+     * Tries to win if possible, otherwise, blocks the player's winning move.
+     * If neither is possible, makes a random move.
+     */
     public void playComputerMove() {
-        // Simple AI strategy: Try to win or block the player, otherwise, make a random move
-
         // First, check if the computer can win
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -187,10 +219,10 @@ public class TicTacToeGUI extends JFrame {
         }
     }
 
-
-
-
-    
+    /**
+     * Resets the text of all buttons on the game grid.
+     * Clears the board for a new game.
+     */
     public void resetButtons() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -199,6 +231,10 @@ public class TicTacToeGUI extends JFrame {
         }
     }
 
+    /**
+     * Main method to start the Tic Tac Toe game.
+     * Creates an instance of TicTacToeGUI and displays the game window.
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
