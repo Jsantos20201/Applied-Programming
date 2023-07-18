@@ -1,6 +1,7 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+// Importing necessary classes and packages for the Tic Tac Toe game
+import java.awt.*; // Provides classes for creating and managing GUI components and layouts
+import java.awt.event.*; // Provides classes for handling GUI events
+import javax.swing.*; // Provides classes for creating and managing Swing-based GUI components
 
 public class TicTacToeGUI extends JFrame {
     private char[][] board;
